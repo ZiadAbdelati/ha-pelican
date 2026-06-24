@@ -55,5 +55,15 @@
       "network_tx": { "name": "Network out" },
       "uptime": { "name": "Uptime" }
     }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": { "scan_interval": "Update interval (seconds)" },
+        "data_description": {
+          "scan_interval": "How often to poll the panel for status and resource usage. Lower = faster updates, more load on the panel."
+        }
+      }
+    }
   }
 }

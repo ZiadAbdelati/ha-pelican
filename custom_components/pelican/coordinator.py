@@ -6,7 +6,7 @@ from datetime import timedelta
 import logging
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, CONF_URL
+from homeassistant.const import CONF_API_KEY, CONF_SCAN_INTERVAL, CONF_URL
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
@@ -19,8 +19,8 @@ from .api import (
     PelicanData,
     PelicanError,
 )
+from .const import DEFAULT_SCAN_INTERVAL
 
-SCAN_INTERVAL = timedelta(seconds=30)
 _LOGGER = logging.getLogger(__name__)
 
 type PelicanConfigEntry = ConfigEntry[PelicanCoordinator]
@@ -39,7 +39,11 @@ class PelicanCoordinator(DataUpdateCoordinator[dict[str, PelicanData]]):
             _LOGGER,
             name=config_entry.data[CONF_URL],
             config_entry=config_entry,
-            update_interval=SCAN_INTERVAL,
+            update_interval=timedelta(
+                seconds=config_entry.options.get(
+                    CONF_SCAN_INTERVAL, DEFAULT_SCAN_INTERVAL
+                )
+            ),
         )
         self.base_url = config_entry.data[CONF_URL].rstrip("/")
         self.client = PelicanClient(
