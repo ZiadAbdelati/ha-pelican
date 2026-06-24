@@ -32,9 +32,6 @@
     "binary_sensor": {
       "running": { "name": "Running" }
     },
-    "switch": {
-      "power": { "name": "Power" }
-    },
     "button": {
       "start": { "name": "Start" },
       "stop": { "name": "Stop" },

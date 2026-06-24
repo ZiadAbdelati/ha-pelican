@@ -20,7 +20,7 @@ from .api import (
     PelicanError,
 )
 
-SCAN_INTERVAL = timedelta(seconds=60)
+SCAN_INTERVAL = timedelta(seconds=30)
 _LOGGER = logging.getLogger(__name__)
 
 type PelicanConfigEntry = ConfigEntry[PelicanCoordinator]
