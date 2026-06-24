@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "url": "URL",
+          "api_key": "API key"
+        },
+        "data_description": {
+          "url": "Base URL of your Pelican panel, e.g. https://panel.example.com",
+          "api_key": "A client API key from your panel: Profile → API Keys"
+        }
+      },
+      "reauth_confirm": {
+        "description": "The API key for {url} is no longer valid. Enter a new one.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid API key",
+      "cannot_connect": "Failed to connect",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This panel is already configured",
+      "reauth_successful": "Re-authentication was successful"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "running": { "name": "Running" }
+    },
+    "switch": {
+      "power": { "name": "Power" }
+    },
+    "button": {
+      "start": { "name": "Start" },
+      "stop": { "name": "Stop" },
+      "restart": { "name": "Restart" },
+      "kill": { "name": "Kill" }
+    },
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "running": "Running",
+          "starting": "Starting",
+          "stopping": "Stopping",
+          "offline": "Offline"
+        }
+      },
+      "cpu": { "name": "CPU utilization" },
+      "memory": { "name": "Memory" },
+      "disk": { "name": "Disk" },
+      "network_rx": { "name": "Network in" },
+      "network_tx": { "name": "Network out" },
+      "uptime": { "name": "Uptime" }
+    }
+  }
+}

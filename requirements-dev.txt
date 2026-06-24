@@ -1,0 +1,7 @@
+# aioresponses (test-only mock) breaks on aiohttp>=3.11; pin for the dev/test env.
+# Home Assistant provides aiohttp at runtime, so this pin does not affect the integration.
+aiohttp<3.11
+aioresponses
+pytest
+pytest-asyncio
+ruff

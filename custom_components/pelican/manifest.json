@@ -1,0 +1,12 @@
+{
+  "domain": "pelican",
+  "name": "Pelican Panel",
+  "codeowners": ["@ZiadAbdelati"],
+  "config_flow": true,
+  "documentation": "https://github.com/ZiadAbdelati/ha-pelican",
+  "integration_type": "service",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/ZiadAbdelati/ha-pelican/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
